@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import"./styles/app.css";
+import Header from './components/Header';
+import Login from './components/Login';
+import Carousel from './components/Carousel';
 
-function App() {
+const App = () => {
+  const [ login , setLogin ] = useState(false);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <main>
+      <Header setTrigger={setLogin} />
+      <Carousel />
+    </main>
+      <Login Trigger={login} setTrigger={setLogin}/>
     </div>
   );
 }

@@ -1,0 +1,26 @@
+{
+    "name": "jewels",
+    "logo": "./public/images/logoipsum-221.svg",
+    "navIcons": [
+        {
+            "id": 1,
+            "name": "search",
+            "image": "../public/images/search_FILL0_wght400_GRAD0_opsz48.svg"
+        },
+        {
+            "id": 2,
+            "name": "user",
+            "image": "../public/images/account_circle_FILL0_wght400_GRAD0_opsz48.svg"
+        },
+        {
+            "id": 1,
+            "name": "wishlist",
+            "image": "../public/images/favorite_FILL0_wght400_GRAD0_opsz48.svg"
+        },
+        {
+            "id": 1,
+            "name": "cart",
+            "image": "../public/images/shopping_bag_FILL0_wght400_GRAD0_opsz48.svg"
+        }
+    ]
+}
