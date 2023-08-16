@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import showIcon from "../assets/show.png";
 import hideIcon from "../assets/hide.png";
+import closeIcon from "../assets/close_FILL0_wght400_GRAD0_opsz48.png";
 import heroImage from "../assets/pexels-say-straight-2735970.jpg"
 import "../styles/Login.css"
 
@@ -27,8 +28,19 @@ const Login = (props) => {
   return ( Trigger ? 
     <div className="login-page">
         <div className="login">
+            <img 
+                src={closeIcon} 
+                alt="close" 
+                className="close-icon"
+                onClick={handleSubmit}
+            />
             <div className="hero">
-                <img src={heroImage} alt="welcome" className="hero-image" />
+                <img
+                    src={heroImage}
+                    alt="welcome"
+                    className="hero-image" 
+                    loading="lazy"
+                />
             </div>
             <div className="main">
                 <div className="sign">
@@ -56,6 +68,7 @@ const Login = (props) => {
                                 <img 
                                     src={show? hideIcon : showIcon } 
                                     onClick={handleShow} 
+                                    alt="icon"
                                     className="eyecon"
                                 />
                             </div>
@@ -69,7 +82,7 @@ const Login = (props) => {
                     </div>
                     <div className="sign--up">
                         <p className="no--account">Don't have an account?</p>
-                        <p className="register" onClick={handleSubmit}>Register here</p>
+                        <p className="register">Register here</p>
                     </div>
                 </div>
             </div>

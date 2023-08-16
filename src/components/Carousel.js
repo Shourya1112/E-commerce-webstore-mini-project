@@ -1,7 +1,7 @@
 import React, { useState , useEffect } from 'react';
-import '../styles/carousel.css';
 import prevIcon from "../assets/left-chevron.png"
 import nextIcon from "../assets/right-chevron.png"
+import '../styles/carousel.css';
 
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(0); // Starting from 0
@@ -37,10 +37,10 @@ const Carousel = () => {
   }
 
     useEffect(() => {
-    // Automatically switch to the next slide every 3 seconds
+    // Automatically switch to the next slide every 5 seconds
     const interval = setInterval(() => {
       showNextSlide();
-    }, 3000);
+    }, 5000);
 
     // Clear the interval when the component unmounts or slideIndex changes
     return () => clearInterval(interval);
