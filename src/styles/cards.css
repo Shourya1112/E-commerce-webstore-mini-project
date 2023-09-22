@@ -29,6 +29,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .card-image {
@@ -45,4 +46,15 @@
 .card-title {
     overflow: hidden;
     height: 50px;
+}
+
+@media (max-width: 900px) {
+    .cards-container {
+        width: calc(100% - 20px);
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+    .card {
+        max-width: calc(45% - 10px);
+    }
 }

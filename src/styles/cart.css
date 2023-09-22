@@ -1,0 +1,217 @@
+.cart-page {
+    width: calc(100% - 10rem);
+    height: calc(100vh - 9rem);
+    position: relative;
+    padding-top: 5rem;
+    padding-inline: 5rem;
+}
+
+.cart-layout {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    /* gap: auto; */
+}
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 1.5rem;
+}
+
+.back-btn:hover , .remove-icon:hover {
+    transform: scale(1.2);
+}
+
+.back-btn:active, .remove-icon:active {
+    transform: scale(1.1)
+}
+
+.cart-text {
+    color: var(--Space-Cadet, #17183B);
+    /* Typography/headline/medium */
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.75rem;
+    /* 137.5% */
+    margin: 0;
+}
+
+.cart-item {
+    width: 70rem;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #D1D1D8;
+    position: relative;
+    padding: 2rem;
+}
+
+.cart-item-image-div {
+    height: 9rem;
+    width: 9rem;
+    overflow: hidden;
+}
+
+.cart-item-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.remove-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.cart-item-details {
+    width: 80%;
+    color: var(--Space-Cadet, #17183B);
+    /* Typography/title/small */
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem;
+    /* 120% */
+}
+
+.cart-item-price {
+    font-weight: 700;
+}
+
+.cart-summary {
+    display: flex;
+    width: 23rem;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 0.125rem;
+    border: 2px solid #3AA39F;
+    background: var(--White, #FFF);
+    margin-left: auto;
+}
+
+.summary-text {
+    align-self: stretch;
+    color: var(--Space-Cadet, #17183B);
+    
+    /* Typography/headline/small */
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+    /* 133.333% */
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.summary-title {
+    color: var(--Space-Cadet, #17183B);
+    
+    /* Typography/body/large */
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    /* 150% */
+}
+
+.summary-info {
+    color: var(--Space-Cadet, #17183B);
+    
+    /* Typography/body/large */
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+    /* 150% */
+}
+
+.divider {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--French-Grey, #D1D1D8);
+}
+
+.order-btn {
+    display: flex;
+    height: 3.25rem;
+    padding: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 0.25rem;
+    background: var(--Verdigris, #3AA39F);
+    color: var(--White, #FFF);
+    user-select: none;
+    cursor: pointer;
+    
+    /* Typography/label/medium */
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.25rem;
+    /* 125% */
+    letter-spacing: 0.00625rem;
+}
+
+.order-btn:hover {
+    background: #FFF;
+    transition: all ease 0.1s;
+    border: 1px solid #3AA39F;
+    color: #3AA39F
+}
+
+.order-btn:active {
+    background: #3AA39F;
+    transition: all ease 0.1s;
+    border: 1px solid #3AA39F;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .cart-page {
+        padding: 10px;
+        padding-top: 5rem;
+        width: calc(100% - 20px);
+        height: auto;
+    }
+    .cart-layout {
+        flex-direction: column;
+    }
+    .useless-div {
+        width: 100%;
+    }
+    .cart-text {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    .cart-item {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .cart-summary {
+        width: calc(100% - 2rem);
+        margin: 0;
+        padding: 1rem;
+    }
+}

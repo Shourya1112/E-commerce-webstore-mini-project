@@ -5,11 +5,24 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Home from './components/Home';
 import Product from './components/Product';
-import Footer from "./components/Footer"
+import Cart from './components/Cart';
+import Footer from "./components/Footer";
 
 const App = () => {
   // State for controlling login visibility
   const [login, setLogin] = useState(false);
+
+  // State to store the items in the cart
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = localStorage.getItem('cartItems');
+    return storedCartItems ? JSON.parse(storedCartItems) : [];
+  });
+    console.log(cartItems);
+
+  // Update localStorage whenever cartItems state changes
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // State for storing products data
   const [products, setProducts] = useState([]);
@@ -22,7 +35,7 @@ const App = () => {
         if (cachedData) {
           setProducts(JSON.parse(cachedData));
         } else {
-          const response = await fetch('https://fakestoreapi.com/products/category/jewelery');
+          const response = await fetch('https://fakestoreapi.com/products/');
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -38,19 +51,33 @@ const App = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
 
   return (
     <div className="App">
-    <Header setTrigger={setLogin} />
       <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Home products={products}/>}/>
-            <Route path="/product" element={<Product />} />
+            <Route 
+              path="/" 
+              element={<Home products={products}/>}
+            />
+            <Route 
+              path="/product/:id" 
+              element={<Product 
+                cartItems={cartItems} 
+                setCartItems={setCartItems}/>}
+            />
+            <Route 
+              path="/cart" 
+              element={<Cart 
+                cartItems={cartItems} 
+                setCartItems={setCartItems}/>} 
+            />
+            <Route 
+              path='/login'
+              element={<Login />}
+            />
         </Routes>
       </BrowserRouter>
-      <Footer />
-      <Login Trigger={login} setTrigger={setLogin} />
     </div>
   );
 }

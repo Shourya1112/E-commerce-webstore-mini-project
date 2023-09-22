@@ -1,8 +1,8 @@
 .carousel, .slider-container, .slides, .slider-image, .slide {
     width: 100%;
     padding: 0;
-    max-height: 600px;
-    height: 60%;
+    max-height: 400px;
+    height: 50%;
 }
 
 

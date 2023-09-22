@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;700&display=swap");
 .login-page {
   width: 100%;
-  height: 100vh;
-  position: absolute;
+  height: calc(100vh - 4rem);
   top: 0;
   z-index: 2;
   display: flex;
@@ -17,48 +16,12 @@
 
 .login {
   width: 100%;
-  max-width: 800px;
-  height: 600px;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  border-radius: 30px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px; */
   position: relative;
-}
-
-.close-icon {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 2;
-  width: 20px;
-  cursor: pointer;
-}
-
-.close-icon:hover {
-  scale: 1.2;
-  transition: 200ms ease;
-}
-
-.hero {
-  background: #000;
-  width: 45%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image {
-  width: auto;
-  height: 100%;
-
-}
-
-.main {
-  width: 55%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +40,7 @@
   font-style: normal;
   font-weight: bold;
   line-height: normal;
+  margin-bottom: 0.2rem;
 }
 
 .log--text {
@@ -147,6 +111,7 @@
   left: 18.3rem;
   bottom: 20%;
   margin: none;
+  cursor: pointer;
 }
 
 .forgot {

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import showIcon from "../assets/show.png";
 import hideIcon from "../assets/hide.png";
-import closeIcon from "../assets/close_FILL0_wght400_GRAD0_opsz48.png";
-import heroImage from "../assets/pexels-say-straight-2735970.jpg"
+import Header from "./Header";
+import { Link } from "react-router-dom";
 import "../styles/Login.css"
 
 const Login = (props) => {
-    const Trigger = props.Trigger;
-    const LoginPage = props.setTrigger;
 
   const [show, setShow] = useState(false);
 //   const navigate = useNavigate();
@@ -21,28 +19,15 @@ const Login = (props) => {
     // Perform your form submission logic here
 
     // Redirect to the "/" route
-    LoginPage((prev) => prev = !prev)
+    // LoginPage((prev) => prev = !prev)
   };
 
 
-  return ( Trigger ? 
+  return ( 
+    <div>
+    <Header />
     <div className="login-page">
         <div className="login">
-            <img 
-                src={closeIcon} 
-                alt="close" 
-                className="close-icon"
-                onClick={handleSubmit}
-            />
-            <div className="hero">
-                <img
-                    src={heroImage}
-                    alt="welcome"
-                    className="hero-image" 
-                    loading="lazy"
-                />
-            </div>
-            <div className="main">
                 <div className="sign">
                     <h2 className="log--heading">Sign In</h2>
                     <h4 className="log--text">sign in to your account</h4>
@@ -73,11 +58,13 @@ const Login = (props) => {
                                 />
                             </div>
                             <p className="forgot">Forgot password?</p>
+                            <Link to="/">
                             <input 
                                 className="input--btn" 
                                 type="submit" 
                                 value="Sign In" 
                             />
+                            </Link>
                         </form>
                     </div>
                     <div className="sign--up">
@@ -87,7 +74,7 @@ const Login = (props) => {
                 </div>
             </div>
         </div>
-    </div> : ""
+    </div>
   );
 };
 
