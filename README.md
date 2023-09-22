@@ -59,7 +59,7 @@ To run this project locally, follow these steps:
 
 ## Deployment
 
-The E-Commerce mockup project is hosted on Vercel. You can access the live demo of the project at the following URL: [Project Demo]()
+The E-Commerce mockup project is hosted on Vercel. You can access the live demo of the project at the following URL: [Project Demo](https://totalitycorp-frontend-challenge-zeta-ten.vercel.app/)
 
 ## Future Development
 
