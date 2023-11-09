@@ -36,9 +36,6 @@ const Header = (props) => {
         <div className='nav'>
             <ul className='icon-list'>
                 <li>
-                    <img src={searchIcon} alt='search' className='icon search-icon' />
-                </li>
-                <li>
                     <Link to="/login">
                         <img src={userIcon} alt='user' className='icon user-icon' />
                     </Link>
